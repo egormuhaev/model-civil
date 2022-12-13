@@ -20,22 +20,7 @@ class App():
               self.priceMan, self.priceBul, self.priceWorkM1, self.priceWorkM2, self.teamDap)
 
 
-while True:
-    print("Режимы:")
-    print("1) Двое рабочих")
-    print("2) Рабочий 6-ого разряда")
-    print("Выберите режим: ")
-    workSession = input()
-    if workSession == "1":
-        os.system("clear")
-        ms = App(True)
-        ms.startSimulation()
-        break
-    elif workSession == "2":
-        os.system("clear")
-        ms = App(False)
-        ms.startSimulation()
-        break
-    else:
-        os.system("clear")
-        continue
+
+ms = App(False)
+ms.startSimulation()
+

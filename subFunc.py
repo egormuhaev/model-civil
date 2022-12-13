@@ -129,14 +129,14 @@ def getTimeRepair2(m1, uM, status):
 def getGlobalData(m1, m2, u1, u2, coutUM1Bul, coutUM2Man, priceMan, priceBul, priceWorkM1, priceWorkM2, teamDap, workTeam):
     print("#" * 10 + " Отчет " + "#" * 10)
 
-    print(str(u1.name) + " Работал: " + str(u1.workTime/60) + " часов")
-    print(str(u1.name) + " Проистаивал: " + str(u1.cont/60) + " часов")
+    print(str(u1.name) + " Работал: " +  str(math.ceil(u1.workTime/60)) + " часов")
+    print(str(u1.name) + " Проистаивал: " +  str(math.ceil(u1.cont/60)) + " часов")
 
-    print(str(u2.name) + " Работал: " + str(u2.workTime/60) + " часов")
+    print(str(u2.name) + " Работал: " + str(math.ceil(u2.workTime/60)) + " часов")
     print(str(u2.name) + " Проистаивал: " + str(u2.cont/60) + " часов")
 
-    print(str(m1.specClass) + " Работал: " + str(m1.repairTime/60) + " часов")
-    print(str(m2.specClass) + " Работал: " + str(m2.repairTime/60) + " часов")
+    print(str(m1.specClass) + " Работал: " +  str(math.ceil(m1.repairTime/60)) + " часов")
+    print(str(m2.specClass) + " Работал: " +  str(math.ceil(m2.repairTime/60)) + " часов")
 
 
     wtU1 = math.ceil((u1.cont/60)* coutUM1Bul)

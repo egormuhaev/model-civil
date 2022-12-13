@@ -38,9 +38,6 @@ def model(workShiftTime, period, workTeam, coutUM1Bul, coutUM2Man, priceMan, pri
                 else:
                     uM1.repairTimeState -= 1
             
-           
-
-
 
             freeM(master1, master2, workTeam)
             if uM2.state == -1:
@@ -62,7 +59,7 @@ def model(workShiftTime, period, workTeam, coutUM1Bul, coutUM2Man, priceMan, pri
             elif uM2.state == 1:
                 if uM2.repairTimeState == 0:
                     uM2.state = -1
-                    uM2.workTimeState = exp(2)
+                    uM2.workTimeState = exp(4)
                     uM2.workTime += uM2.workTimeState
                 else:
                     uM2.repairTimeState -= 1
@@ -97,5 +94,14 @@ def model(workShiftTime, period, workTeam, coutUM1Bul, coutUM2Man, priceMan, pri
                     freeM(master1, master2, workTeam)
             else:
                 break
+        
+        # print("День: " + str(i))
+        # print(str(uM1.name) + " Работа: " + str(uM1.workTime))
+        # print(str(uM2.name) + " Работа: " + str(uM2.workTime))
+        # print(str(uM1.name) + " Простой: " + str(uM1.cont))
+        # print(str(uM2.name) + " Простой: " + str(uM2.cont))
+        
+
+
 
     getGlobalData(master1, master2, uM1, uM2, coutUM1Bul, coutUM2Man, priceMan, priceBul, priceWorkM1, priceWorkM2, teamDap, workTeam)
